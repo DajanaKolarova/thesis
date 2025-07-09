@@ -20,8 +20,8 @@ Volání jednotlivých kapitol: načítá další soubory, kde je skutečný obs
 
 
 3. Sekce
-   
-   ```
+
+```
 projekt/
 │
 ├── main.tex               % Hlavní soubor - balíčky, fonty, základní globální nastavení
@@ -40,7 +40,7 @@ projekt/
 └── figures/                % Obrázky
     ├── example_1.png
     ├── example_2.png
-   ```
+```
 
 
 5. Literatura:
@@ -49,12 +49,12 @@ projekt/
    * Dá se synchronizovat se zotero
    * V textu cituješ pomocí:
 
-     ```latex
+     ```
      \cite{klic}
      ```
    * Na konci souboru `main.tex` je příkaz pro vypsání literatury:
 
-     ```latex
+      ```
      \printbibliography
      ```
 
@@ -117,12 +117,6 @@ prázdný řádek v kódu  - nový odstavec
 E = mc^2
 \end{equation}
 ```
-
-
-### **Odkazy a citace**
-
-* Odkaz na kapitolu nebo obrázek: `\ref{label}`
-* Citace zdroje: `\cite{klic}` (musíš mít `.bib` soubor)
 
 
 ### **Obrázek**
