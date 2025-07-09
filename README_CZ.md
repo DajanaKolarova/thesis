@@ -64,11 +64,90 @@ projekt/
    * Klikni na **"Recompile"**.
 
 
-## 🧠 Doporučení pro úplné začátečníky
+LaTeX chybuje často. Je to normální. Časem si zvykneš rozpoznávat běžné chyby během pár sekund.
+Neboj se experimentovat a zkusit to znovu.
+
+        * Podívej se **nahoře v logu**, kde kompilátor hlásí **"Error"** – tam bývá hlavní problém.
+        * Pokud máš Overleaf, klikni na chybu, ukáže ti **konkrétní řádek**.
+        * Hledej „missing“ (něco chybí) nebo „undefined“ (něco neexistuje).
+
+
+## 💡� Doporučení pro úplné začátečníky
 
 * Každý příkaz má v této šabloně komentář začínající `%`, který ti vysvětlí, co dělá.
 * Nejprve jen měň texty a názvy kapitol. Piš svůj hlavní text. Až potom zkoušej tabulky, obrázky a literaturu.
 * Když nevíš, strejda ChatGPT ti pomůže
+
+
+## ✏️ **Základní formátování textu v LaTeXu**
+```
+\textbf{tučný}   
+\textit{kurzíva}     
+\underline{podtržený}
+\section{Název}
+\subsection{Název}   
+\subsubsection{Název}
+\paragraph{Název} 
+\newline
+\newpage  
+prázdný řádek v kódu  - nový odstavec  
+```
+
+#### **Odrážkový seznam:**
+
+```
+\begin{itemize}
+    \item První položka
+    \item Druhá položka
+\end{itemize}
+```
+
+#### Číslovaný seznam:
+
+```
+\begin{enumerate}
+    \item První bod
+    \item Druhý bod
+\end{enumerate}
+```
+
+###**Rovnice**
+```
+\begin{equation}
+E = mc^2
+\end{equation}
+```
+
+
+### **Odkazy a citace**
+
+* Odkaz na kapitolu nebo obrázek: `\ref{label}`
+* Citace zdroje: `\cite{klic}` (musíš mít `.bib` soubor)
+
+
+### **Obrázek**
+
+```
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.5\textwidth]{figures/example.png}
+\caption{Popisek obrázku}
+\label{fig:example}
+\end{figure}
+```
+
+
+### **Tabulka**
+
+```
+\begin{tabular}{|l|l|}
+\hline
+Nadpis 1 & Nadpis 2 \\
+\hline
+Položka A & Položka B \\
+\hline
+\end{tabular}
+```
 
 
 ## Proč psát v LaTeXu a ne wordu?
