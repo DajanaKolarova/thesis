@@ -18,22 +18,30 @@ Obsahuje:
 Globální nastavení: použití balíčků, nastavení jazyka, písma, vzhledu stránky, nastavení obsahu a citací.
 Volání jednotlivých kapitol: načítá další soubory, kde je skutečný obsah práce.
 
-3. Složka `/sections/`:
 
-   * Obsahuje jednotlivé části textu (např. `experiment.tex` s příkladem materiálů a metod).
-   * Můžeš si vytvořit vlastní soubory pro jednotlivé kapitoly a vložit je do `main.tex` pomocí:
+3. Sekce
+   
+   ```
+projekt/
+│
+├── main.tex               % Hlavní soubor - balíčky, fonty, základní globální nastavení
+├── bibliography.bib       % Literární zdroje (BibTeX)
+│
+├── sections/
+│   ├── 0firstcomponents.tex            % Poděkování, souhrn, summary
+│   ├── 1INTRODUCTION.tex               % Úvod
+│   ├── 2THEORITICAL_PART.tex           % Teoretická rešerše
+│   ├── 3METHODS.tex                    % Seznam materiálů a metody
+│   ├── 4RESULTS.tex                    % Výsledky
+│   ├── 5CONCLUSION.tex                 % Diskuze a závěr
+│   ├── 6lastcomponents.tex             % Seznam použitých zkratek
+│   ├── 7appendix.tex                   % Přílohy
+│
+└── figures/                % Obrázky
+    ├── example_1.png
+    ├── example_2.png
+   ```
 
-     ```latex
-     \input{sections/nazev_souboru}
-     ```
-
-4. Složka `/figures/`:**
-
-   * Sem patří obrázky, které vkládáš do práce příkazem:
-
-     ```latex
-     \includegraphics[width=\textwidth]{figures/nazev_souboru.png}
-     ```
 
 5. Literatura:
 
@@ -56,26 +64,27 @@ Volání jednotlivých kapitol: načítá další soubory, kde je skutečný obs
    * Klikni na **"Recompile"**.
 
 
-
-
-## 📁 Struktura projektu
-
-   ```
-projekt/
-│
-├── main.tex               % Hlavní soubor - balíčky, fonty, základní globální nastavení
-├── bibliography.bib       % Literární zdroje (BibTeX)
-│
-├── sections/              % Jednotlivé části dokumentu
-│   ├── example.tex        % Ukázková kapitola
-│   └── experiment.tex     % Ukázka experimentální části
-│
-└── figures/                % Obrázky
-    ├── example.png
-   ```
-
 ## 🧠 Doporučení pro úplné začátečníky
 
 * Každý příkaz má v této šabloně komentář začínající `%`, který ti vysvětlí, co dělá.
 * Nejprve jen měň texty a názvy kapitol. Piš svůj hlavní text. Až potom zkoušej tabulky, obrázky a literaturu.
 * Když nevíš, strejda ChatGPT ti pomůže
+
+
+## Proč psát v LaTeXu a ne wordu?
+
+% Výhody:
+✅ Stabilní výstup (žádné posouvání obrázků při formátování)
+✅ Vhodný pro dlouhé práce (bakalářky, diplomky, články, disertace)
+✅ Podpora mnoha jazyků a vědeckých formátů (matematické vzorece, chemické rovnice,.. )
+✅ Práce s citacemi (BibTeX, biblatex) – automatické formátování podle stylů časopisů
+✅ Profesionální typografie (rovnoměrné mezery, kvalitní zarovnání textu, čitelné fonty)
+✅ Automatická tvorba obsahu, seznamu obrázků a tabulek
+
+Nevýhody:
+⚠️ Vyšší vstupní náročnost (učíš se psát kód, ne jen klikání)
+
+Shrnutí:
+Pokud chceš mít nad svým dokumentem plnou kontrolu a zároveň Tě baví naučit se něco nového, LaTeX je skvělá volba.
+Word je fajn pro rychlé psaní, ale LaTeX Ti ušetří čas při formátování a revizích.
+
