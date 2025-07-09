@@ -1,0 +1,211 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+% PAGE SETTINGS 
+\documentclass[a4paper, 12pt]{article}
+\renewcommand{\baselinestretch}{1.5} 
+\def\pwidth{210}
+\def\margin{25.0}
+\hbadness=1350
+\usepackage[top=3.0cm, bottom=3.0cm, left=3.5cm, right=2.5cm]{geometry}
+\sloppy
+\usepackage{setspace}
+\onehalfspace
+\NeedsTeXFormat{LaTeX2e}
+\usepackage{ifxetex}
+\ifxetex
+  \usepackage{fontspec}
+  \usepackage{xltxtra}
+  \usepackage[english]{babel}
+\else
+  \usepackage[utf8]{inputenc}
+  \usepackage[english]{babel}
+\fi
+
+% SECTIONS SETTINGS 
+\usepackage{titlesec}
+\titleformat{\paragraph}
+{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}
+{0pt}{3.25ex plus 1ex minus .2ex}{1.5ex plus .2ex}
+
+% depth of 5 layers
+%chapter,section,subsection,subsubsection,paragraph,subparagraph
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+
+% EXTRA PACKAGES 
+%\usepackage[colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=black]{hyperref} % na hypertextove odkazy !!!!!!!! robi fuckup !!!!!!!!!
+\usepackage{url}
+\usepackage{xurl} % to hyphenate url
+\usepackage{color}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage[flushleft]{threeparttable}
+\usepackage{verbatim}
+\usepackage{amssymb}  
+\usepackage{graphicx}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{physics}
+\usepackage{siunitx}
+\usepackage{bm}
+\usepackage{nicefrac}
+\usepackage{enumitem}
+\usepackage[titletoc,title]{appendix}
+\usepackage{tabu}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{listings}
+\usepackage{pdfpages}
+\usepackage{imakeidx} \makeindex
+\usepackage{csquotes}
+\usepackage[acronym]{glossaries}
+\makeglossaries
+\usepackage[none]{hyphenat} 
+\usepackage{microtype}
+\usepackage{indentfirst}% to indent first paragraph after section
+\usepackage{chemformula} %% \ch{SO2}
+\usepackage{adjustbox} 
+
+% BIBTEX ACS STYLE (VSCHT EDIT) 
+
+\usepackage[style=chem-acs, backend=biber, articletitle=true, doi=true]{biblatex}
+\addbibresource{references.bib}
+\addbibresource{references-2.bib}
+\urlstyle{same}
+
+\DeclareFieldFormat[article,periodical]{number}{\mkbibparens{#1}}
+\renewbibmacro*{volume+number+eid}{%
+  \printfield{volume}%
+  \setunit*{\addspace}%
+  \printfield{number}%
+  \setunit*{\addspace}%
+  \printfield{eid}%
+}
+\DeclareBibliographyDriver{article}{%
+  \usebibmacro{bibindex}%
+  \usebibmacro{begentry}%
+  \printnames{author}%
+  \setunit{\labelnamepunct}\newblock
+  \printfield{title}%
+  \newunit
+  \printfield{journal}%
+  \setunit{\addspace}
+  \printfield{volume}
+  \setunit{\addspace}
+  \printfield{number}
+  \setunit{\addspace}
+  \printfield{eid}
+  \newunit
+  \printfield{year}
+  \newunit
+  \printfield{pages}
+  \newunit
+  \printfield{doi}
+  \newunit
+  \usebibmacro{finentry}%
+}
+\renewbibmacro*{citekey}{}  
+\renewbibmacro*{publisher+location+date} {%
+  \usebibmacro{date}%
+}
+\renewbibmacro*{finentry}{\finentry}
+
+% LISTS   
+%deleting the headline of List of Figures
+\makeatletter
+\renewcommand\listoffigures{%
+        \@starttoc{lof}%
+}
+%deleting the headline of List of Tables
+\makeatletter
+\renewcommand\listoftables{%
+        \@starttoc{lot}%
+}
+
+% CZECH TITLES 
+% change Figure Caption
+\addto\captionsenglish{\renewcommand{\figurename}{Obrázek}}
+\usepackage{caption}
+\captionsetup[figure]{font=small,labelfont=bf}
+
+% change TOC caption
+\addto\captionsenglish{\renewcommand{\contentsname}{Obsah}}
+% change appendix caption
+\addto\captionsenglish{\renewcommand{\appendixname}{Příloha}}
+% change Table Caption
+\addto\captionsenglish{\renewcommand{\tablename}{Tabulka}}
+\captionsetup[table]{font=small,labelfont=bf}  
+
+% MATLAB FORMAT 
+\definecolor{mygreen}{RGB}{28,172,0} 
+\definecolor{mylilas}{RGB}{170,55,241}
+
+\lstset{language=Matlab,%
+    basicstyle=\ttfamily\small,
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{black},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break,function,if},emphstyle=[1]\color{blue}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},
+    literate={á}{{\'a}}1
+       {š}{{\v s}}1
+       {č}{{\v c}}1
+       {ž}{{\v z}}1
+       {é}{{\'e}}1
+       {í}{{\'i}}1
+       {ý}{{\'y}}1
+       {ú}{{\' u}}1
+       {ľ}{{\v l}}1
+       {ô}{{\^o}}1
+       {ä}{{\"a}}1
+       {ť}{{\v t}}1
+       {ň}{{\v n}}1
+}
+
+% EQUATION COUNTER 
+% equation counter according to sections
+\numberwithin{equation}{section}
+% equation counter according to subsections
+%\numberwithin{equation}{subsection}
+
+% HYPHENATE 
+\hyphenation{}
+
+\begin{document}
+\thispagestyle{empty}
+
+% ACKNOWLEDGEMENT, SUMMARY, Contents
+\include{0firstComponents}
+
+\include{1INTRODUCTION}
+
+\include{2THEORETICAL_PART}
+
+\include{3METHODS}
+
+\include{4RESULTS}
+
+\include{5CONCLUSION}
+ 
+% REFERENCES, List of Abbreviations, List of Symbols, List of Tables, 
+% List of Figures, Index
+\include{6lastComponents}
+
+% Appendix
+\include{7appendix}
+
+\end{document}

@@ -1,0 +1,53 @@
+% REFERENCES
+\clearpage
+\pagenumbering{gobble}
+
+\printbibliography[heading=bibintoc, title={Literatura}]
+
+\newpage
+\clearpage
+\pagenumbering{gobble}
+
+% List of Abbreviations
+\section*{Seznam použitých zkratek}
+\begin{multicols}{2}
+\end{multicols}
+
+\begin{description}[align=left,labelwidth=3cm,leftmargin=4cm]
+
+\end{description}
+
+\end{document}
+
+% List of Symbols
+    
+\newpage
+\addcontentsline{toc}{section}{List of symbols}
+\section*{List of Symbols}
+
+\begin{tabular}{ll}
+$x$ & position\\
+$v$ & velocity\\
+...\\
+\end{tabular}
+
+% List of Tables
+%%\sloppy % when text exceeding the page and not hyphenated properly
+\newpage
+\addcontentsline{toc}{section}{List of tables}
+\section*{List of tables}
+\listoftables
+
+% List of Figures
+%%\sloppy % when text exceeding the page and not hyphenated properly
+\newpage
+\vskip 1cm
+\addcontentsline{toc}{section}{List of figures}
+\section*{List of figures}
+\listoffigures
+
+% Index
+%%\sloppy % when text exceeding the page and not hyphenated properly
+\newpage
+\addcontentsline{toc}{section}{Index}
+\printindex
