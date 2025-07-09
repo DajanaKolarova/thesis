@@ -60,6 +60,7 @@ Volání jednotlivých kapitol: načítá další soubory, kde je skutečný obs
 
 ## 📁 Struktura projektu
 
+   ```
 projekt/
 │
 ├── main.tex               % Hlavní soubor - balíčky, fonty, základní globální nastavení
@@ -71,7 +72,7 @@ projekt/
 │
 └── figures/                % Obrázky
     ├── example.png
-
+   ```
 
 ## 🧠 Doporučení pro úplné začátečníky
 
