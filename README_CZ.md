@@ -2,6 +2,8 @@
 
 Tato šablona slouží jako základní kostra pro psaní **vědeckých, laboratorních nebo studentských prací v LaTeXu**. Obsahuje komentáře k základním příkazům a ukázku struktury dokumentu. Je vhodná i pro začátečníky, kteří se s LaTeXem teprve seznamují.
 
+CustomGPT kompatibilní s touto šablonou: https://chatgpt.com/g/g-6803582b37a8819190dd2132d148b86d-latex-thesis-code-tutor
+
 ## ⚙️ Jak šablonu použít v Overleaf
 
 1. Vytvoř nový projekt:
