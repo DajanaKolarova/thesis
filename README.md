@@ -4,6 +4,8 @@ This template serves as a basic structure for writing scientific, laboratory, or
 It includes comments explaining basic commands and a sample document structure.
 It is suitable even for beginners who are just starting with LaTeX.
 
+Custom GPT working with this template: https://chatgpt.com/g/g-6803582b37a8819190dd2132d148b86d-latex-thesis-code-tutor
+
 ⚙️ **How to use the template in Overleaf**
 
 Create a new project:
